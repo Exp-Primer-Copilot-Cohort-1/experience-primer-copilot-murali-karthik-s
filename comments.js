@@ -10,5 +10,5 @@ app.get('/comments', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server started on http://localhost:3000);
+  console.log(`Server started on http://localhost:3000`);
 });
