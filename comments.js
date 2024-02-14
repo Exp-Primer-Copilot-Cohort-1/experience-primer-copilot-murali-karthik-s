@@ -1,14 +1,25 @@
 // Create a web server
+// To run the server, in the terminal type: node comments.js
+// To test the server, in the terminal type: curl -X GET http://localhost:3000/comments
+
+// Import the express module
 const express = require('express');
+// Create an instance of the express module
 const app = express();
-const port = 3000;
 
-// Create a route for comments
+// Create a route that listens for GET requests on the /comments path
 app.get('/comments', (req, res) => {
-  res.send('This is the comments page');
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server started on http://localhost:3000`);
-});
+  // Send a JSON response with an array of comments
+  res.json([
+    {
+      id: 1,
+      username: 'alice',
+      comment: 'I love your blog!',
+    },
+    {
+      id: 2,
+      username: 'bob',
+      comment: 'Good job',
+    }
+  ]);
+  }
